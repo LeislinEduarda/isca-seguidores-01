@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist do Post Perfeito</title>
+
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --text: #1f1f1f;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #fce100;
+      --accent-hover: #ffe95c;
+      --button-text: #1f1f1f;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 640px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #111827;
+      background: #f3f4f6;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .sub {
+      margin: 0 0 28px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    #FormCadastro {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    #FormCadastro > * {
+      width: 100%;
+      display: block;
+    }
+
+    #FormCadastro input {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      border-radius: 14px;
+      padding: 0 16px;
+      line-height: 54px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #FormCadastro input:focus {
+      border-color: #c7cbd1;
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.04);
+    }
+
+    #FormCadastro input._error {
+      border-color: #dc2626;
+    }
+
+    #FormCadastro div._error {
+      text-align: right;
+      font-size: 12px;
+      margin: -4px 0 10px;
+      color: #dc2626;
+    }
+
+    #FormCadastro button {
+      border: none;
+      border-radius: 16px;
+      line-height: 56px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--accent);
+      color: var(--button-text);
+      transition: transform 0.08s ease, background 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 20px rgba(252, 225, 0, 0.28);
+      margin-top: 6px;
+    }
+
+    #FormCadastro button:hover {
+      background: var(--accent-hover);
+    }
+
+    #FormCadastro button:active {
+      transform: translateY(1px);
+    }
+
+    .mini {
+      margin-top: 14px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      .card {
+        padding: 28px 18px;
+        border-radius: 18px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .sub {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="eyebrow">Checklist gratuito</div>
+
+      <h1>Acesse o mesmo checklist que eu uso em todos os meus post para criar conteúdo que engaja, cresce e vende há mais de 2 anos</h1>
+
+      <p class="sub">
+        Preencha seu nome, email e telefone para receber seu acesso agora.
+      </p>
+
+      <form
+        method="post"
+        action="#"
+        accept-charset="utf-8"
+        id="FormCadastro"
+        data-language='{"error_name":"Nome obrigatório","error_email":"Email obrigatório","error_email_invalid":"Email inválido"}'
+      >
+        <input type="hidden" name="realm" value="https://escola.leislin.com.br" />
+        <input type="hidden" name="token" value="66c0da3dc9a9e1ee96bc60616619a1fe" />
+        <input type="hidden" name="redirect" value="https://escola.leislin.com.br/area/vitrine?sombra=1" />
+
+        <input type="text" name="nome" placeholder="Insira seu nome" />
+        <input type="text" name="email" placeholder="Insira seu email" />
+        <input
+          type="text"
+          name="celular"
+          placeholder="Insira seu celular"
+          maxlength="15"
+          onkeyup="_registerHandlePhone(event)"
+        />
+
+        <button type="submit">Quero meu checklist de post perfeito</button>
+      </form>
+
+      <p class="mini">
+        Ao se cadastrar, você será redirecionada para a área de membros.
+      </p>
+    </section>
+  </main>
+
+  <script type="text/javascript" src="https://cdn.areademembros.com/assets/ptl-cadastro.js"></script>
+</body>
+</html>

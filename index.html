@@ -276,6 +276,79 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
     box-shadow: 0 24px 50px -20px rgba(233, 30, 99, .35);
   }
 
+
+  /* legenda dos prints */
+
+
+  /* ========== MURAL DE PROVAS (bagunçado) ========== */
+  .wall {
+    columns: 3 200px;
+    column-gap: 14px;
+    margin: 36px auto 0;
+    max-width: 680px;
+    text-align: left;
+  }
+  .shot {
+    break-inside: avoid;
+    margin: 0 0 14px;
+    background: var(--white);
+    border: 2px solid var(--pink);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 10px 24px -14px rgba(0,0,0,.25);
+  }
+  .shot img { width: 100%; height: auto; border-radius: 8px; }
+  .shot:nth-child(4n+1) { transform: rotate(-1.6deg); }
+  .shot:nth-child(4n+2) { transform: rotate(1.2deg) translateX(4px); }
+  .shot:nth-child(4n+3) { transform: rotate(-0.6deg); }
+  .shot:nth-child(4n)   { transform: rotate(1.8deg) translateX(-3px); }
+  .shot.empty {
+    border: 2px dotted var(--text);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+  }
+  .shot.empty.tall { min-height: 300px; }
+  .shot.empty.mid { min-height: 220px; }
+  .shot.empty.short { min-height: 150px; }
+
+  /* ========== CARD DA OFERTA ========== */
+  .offer-card {
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 2px solid var(--pink);
+    border-radius: 28px;
+    padding: 40px 28px 30px;
+    box-shadow: 0 30px 60px -28px rgba(233, 30, 99, .4);
+  }
+  .offer-card h2 { font-size: clamp(24px, 3.8vw, 32px); }
+  .offer-card .media { margin: 24px auto; }
+  .offer-card .media.empty { min-height: 0; aspect-ratio: 4 / 5; }
+  .perks {
+    list-style: none;
+    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    margin: 22px auto 0;
+    width: fit-content;
+  }
+  .perks li { display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 700; line-height: 1.3; }
+  .perks .ck {
+    flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--pink); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800;
+  }
+  .pay { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
+  .pay-badge {
+    height: 36px; min-width: 62px; padding: 0 12px;
+    border: 1px solid var(--hairline); border-radius: 8px; background: var(--white);
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    font-size: 14px; color: #32BCAD;
+  }
+  .pay-badge b { color: var(--text); font-weight: 700; }
+
   /* ========== HERO ========== */
   .hero { padding: 64px 0 72px; }
   .hero .media { margin: 32px auto 0; }
@@ -290,6 +363,10 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
     .proofs { gap: 8px; }
     .proofs figure { padding: 6px; border-radius: 14px; }
     .proofs img { border-radius: 9px; }
+    .offer-card { padding: 30px 18px 24px; border-radius: 24px; }
+    .wall { columns: 2; column-gap: 10px; }
+    .shot { padding: 5px; border-radius: 10px; margin-bottom: 10px; }
+    .perks li { font-size: 13.5px; }
   }
 
   .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
@@ -301,102 +378,103 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
 <main>
 
   <!-- ============ HERO ============ -->
-  <section class="hero bg-offwhite">
+  <section class="hero">
     <div class="wrap">
-      <h1>Nunca mais acordei <span class="pk">sem saber o que postar</span>, meu Modelo de Reels tá aqui 👇</h1>
+      <h1>Nunca mais acordei <span class="pk">sem saber o que postar</span>. O meu Modelo de Reels tá aqui 👇</h1>
 
-      <!-- MOCKUP PRINCIPAL GRANDE: Notion aberto + páginas do Modelo + seus Reels reais -->
+      <!-- MOCKUP GRANDE DO MODELO DE REELS -->
       <div class="media tall">
-        <img src="mockup-leislin-2.webp" alt="Modelo de Reels aberto no Notion, com páginas do modelo e Reels reais" width="1800" height="1400" onerror="this.parentElement.classList.add('empty');this.remove()">
-        <div class="ph"><b>Mockup principal</b>Notion aberto, algumas páginas do Modelo e seus Reels reais, numa composição única.</div>
-      </div>    </div>
+        <img src="mockup-leislin-2.webp" alt="Mockup do Modelo de Reels" width="1800" height="1400" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <div class="ph"><b>Mockup grande</b>Modelo de Reels. Arquivo atual: <u>mockup-leislin-2.webp</u>.</div>
+      </div>
+    </div>
   </section>
 
-  <!-- ============ A PARTE DIFÍCIL ============ -->
-  <section class="block bg-pink reveal">
+  <!-- ============ EU USO ============ -->
+  <section class="block reveal">
     <div class="wrap">
-      <h2>Eu já fiz a parte difícil. <em class="pk">Você só precisa adaptar.</em></h2>
-      <p class="sub">Você não precisa inventar um formato novo toda vez que vai postar.</p>
-      <p class="sub">Eu organizei o jeito que crio meus Reels em um modelo simples, que você pode abrir, adaptar ao que sabe e usar quantas vezes quiser.</p>
+      <h2>Eu não tô te vendendo um Modelo que eu acho que funciona. <span class="pk">Eu tô te entregando o que eu uso.</span></h2>
+      <p class="big-line">Eu sou a aluna número 1 do meu próprio Modelo de Reels.</p>
+      <p class="sub" style="margin-top:22px"><strong>95 mil pessoas novas chegaram no meu perfil em 90 dias</strong> (talvez você seja uma delas) usando o meu Modelo de Reels.</p>
 
-      <!-- MONTAGEM VISUAL COM DIFERENTES TELAS DO NOTION -->
-      <div class="media">
-        <img src="notion-telas.webp" alt="Diferentes telas do Modelo de Reels no Notion" onerror="this.parentElement.classList.add('empty');this.remove()">
-        <div class="ph"><b>Montagem do Notion</b>Diferentes telas do Modelo no Notion. Salve como <u>notion-telas.webp</u>.</div>
-      </div>
-
-      <p class="big-line">O meu Modelo. Os meus exemplos. <em class="pk">Tudo pronto para você usar.</em></p>    </div>
-  </section>
-
-  <!-- ============ O MESMO MODELO QUE EU USO ============ -->
-  <section class="block bg-yellow reveal">
-    <div class="wrap">
-      <h2>É o mesmo Modelo que <em>eu uso no meu perfil.</em></h2>
-
-      <!-- MOCKUP COM 3 REELS REAIS SEUS -->
-      <div class="reels">
-        <div class="media">
-          <img src="reel-1.webp" alt="Reels real 1" onerror="this.parentElement.classList.add('empty');this.remove()">
-          <div class="ph"><b>Reels 1</b>reel-1.webp</div>
-        </div>
-        <div class="media">
-          <img src="reel-2.webp" alt="Reels real 2" onerror="this.parentElement.classList.add('empty');this.remove()">
-          <div class="ph"><b>Reels 2</b>reel-2.webp</div>
-        </div>
-        <div class="media">
-          <img src="reel-3.webp" alt="Reels real 3" onerror="this.parentElement.classList.add('empty');this.remove()">
-          <div class="ph"><b>Reels 3</b>reel-3.webp</div>
-        </div>
-      </div>
-
-      <p class="big-line">Com o meu Modelo de Reels, eu consegui trazer <em class="pk">95 mil pessoas novas</em> para o meu perfil em 90 dias.</p>
-
-      <!-- PRINT DA MÉTRICA -->
+      <!-- PRINT DAS MÉTRICAS + REELS REAIS -->
       <div class="media" style="max-width:420px">
-        <img src="print-metrica.webp" alt="Print da métrica: 95 mil novos seguidores em 90 dias" onerror="this.parentElement.classList.add('empty');this.remove()">
-        <div class="ph"><b>Print da métrica</b>Salve como <u>print-metrica.webp</u>.</div>
+        <img src="print-metrica.webp" alt="Print das métricas: 95 mil novos seguidores em 90 dias" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <div class="ph"><b>Print das métricas</b>Salve como <u>print-metrica.webp</u>.</div>
       </div>
+    </div>
+  </section>
 
-      <p class="sub">E o melhor é que eu continuo usando ele até hoje.</p>
-      <p class="big-line">Você não precisa copiar os meus assuntos. <em>Só o meu jeito de criar.</em></p>
+  <!-- ============ O MODELO POR DENTRO ============ -->
+  <section class="block reveal">
+    <div class="wrap">
+      <h2>Eu peguei o jeito que eu crio meus Reels e transformei em um <span class="pk">Modelo pronto pra qualquer pessoa usar.</span></h2>
+      <p class="sub">É só adaptar ao seu trabalho e criar os seus próprios Reels.</p>
+
+      <!-- MOCKUPS MOSTRANDO O MATERIAL POR DENTRO -->
+      <div class="media">
+        <img src="notion-telas.webp" alt="O Modelo de Reels por dentro" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <div class="ph"><b>Material por dentro</b>Mockups mostrando o Modelo por dentro. Salve como <u>notion-telas.webp</u>.</div>
+      </div>
     </div>
   </section>
 
   <!-- ============ PROVAS SOCIAIS ============ -->
-  <section class="block bg-offwhite reveal">
+  <section class="block reveal">
     <div class="wrap">
-      <h2>E olha quem <em>já está usando também.</em></h2>
+      <h2>Eu não sou mais a única usando meu Modelo de Reels. <span class="pk">Outras 3.988 pessoas já usam ele também.</span></h2>
 
-      <!-- PRINTS REAIS DE ALUNAS E RESULTADOS -->
-      <div class="proofs">
-        <figure><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback1.webp" alt="Depoimento de aluna 1"></figure>
-        <figure><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback2.webp" alt="Depoimento de aluna 2"></figure>
-        <figure><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback3.webp" alt="Depoimento de aluna 3"></figure>
+      <!-- PROVAS SOCIAIS: até 7 prints, mural bagunçado. Para adicionar, salve como prova-4.webp ... prova-7.webp -->
+      <div class="wall">
+        <figure class="shot"><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback1.webp" alt="Depoimento" loading="lazy"></figure>
+        <figure class="shot slot tall"><img src="prova-4.webp" alt="Depoimento" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+        <figure class="shot"><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback2.webp" alt="Depoimento" loading="lazy"></figure>
+        <figure class="shot slot short"><img src="prova-5.webp" alt="Depoimento" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+        <figure class="shot"><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback3.webp" alt="Depoimento" loading="lazy"></figure>
+        <figure class="shot slot mid"><img src="prova-6.webp" alt="Depoimento" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
+        <figure class="shot slot short"><img src="prova-7.webp" alt="Depoimento" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
       </div>
     </div>
   </section>
 
-  <!-- ============ FECHAMENTO ============ -->
-  <section class="block bg-pink reveal">
+  <!-- ============ CARD DA OFERTA ============ -->
+  <section class="block reveal">
     <div class="wrap">
-      <h2>Meu Modelo de Reels. <em class="pk">Agora no seu Notion.</em></h2>
+      <div class="offer-card">
+        <h2>Eu já sei o que vou postar. <span class="pk">Agora você também pode saber</span> com o meu Modelo de Reels.</h2>
 
-      <!-- MOCKUP FINAL MOSTRANDO O PRODUTO COMPLETO -->
-      <div class="media">
-        <img src="mockup-final.webp" alt="Modelo de Reels completo" onerror="this.parentElement.classList.add('empty');this.remove()">
-        <div class="ph"><b>Mockup final</b>Produto completo. Salve como <u>mockup-final.webp</u>.</div>
-      </div>
+        <!-- MOCKUP FINAL DO MODELO DE REELS -->
+        <div class="media">
+          <img src="mockup-final.webp" alt="Mockup final do Modelo de Reels" onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><b>Mockup final</b>Salve como <u>mockup-final.webp</u>.</div>
+        </div>
 
-      <p class="sub">O mesmo modelo que eu uso, com exemplos e estruturas prontas para você adaptar ao seu trabalho.</p>
-      <p class="big-line">Sem começar do zero. <em>Sem complicar.</em></p>
+        <div class="price" style="margin-bottom:22px"><small>R$</small>47</div>
 
-      <div class="price-box">
-        <div class="price"><small>R$</small>47</div>
-        <div class="terms">Pagamento único • Acesso imediato • 7 dias de garantia</div>
         <a href="https://lastlink.com/p/CBCD48E92/checkout-payment/" class="cta" data-btn="final">Quero o meu Modelo de Reels</a>
+
+        <ul class="perks">
+          <li><span class="ck">✓</span>Acesso imediato</li>
+          <li><span class="ck">✓</span>7 dias de garantia</li>
+          <li><span class="ck">✓</span>Funciona para qualquer assunto</li>
+        </ul>
+
+        <div class="pay">
+          <span class="pay-badge" aria-label="Visa">
+            <svg viewBox="0 0 48 16" width="44" height="15"><text x="24" y="13" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="900" font-style="italic" fill="#1A1F71">VISA</text></svg>
+          </span>
+          <span class="pay-badge" aria-label="Mastercard">
+            <svg viewBox="0 0 38 24" width="34" height="22"><circle cx="14" cy="12" r="9" fill="#EB001B"/><circle cx="24" cy="12" r="9" fill="#F79E1B"/><path d="M19 4.8a9 9 0 0 1 0 14.4a9 9 0 0 1 0-14.4z" fill="#FF5F00"/></svg>
+          </span>
+          <span class="pay-badge" aria-label="Pix">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2.5l4.2 4.2-2.6 2.6a2.3 2.3 0 0 0-3.2 0L7.8 6.7zM2.5 12l4.2-4.2 2.6 2.6a2.3 2.3 0 0 0 0 3.2l-2.6 2.6zM21.5 12l-4.2 4.2-2.6-2.6a2.3 2.3 0 0 0 0-3.2l2.6-2.6zM12 21.5l-4.2-4.2 2.6-2.6a2.3 2.3 0 0 0 3.2 0l2.6 2.6z" fill="#32BCAD"/></svg>
+            <b>Pix</b>
+          </span>
+        </div>
+
         <div class="secure">
           <svg viewBox="0 0 24 24" fill="none"><path d="M6 10V7a6 6 0 1 1 12 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="4" y="10" width="16" height="11" rx="2" stroke="currentColor" stroke-width="2"/></svg>
-          Pagamento 100% seguro via Lastlink
+          Pagamento 100% seguro
         </div>
       </div>
     </div>

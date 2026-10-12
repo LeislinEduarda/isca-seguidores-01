@@ -183,6 +183,8 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
     margin-bottom: 6px;
   }
   .media.tall.empty { min-height: 380px; }
+  .media.sales { max-width: 680px; margin: 32px auto 8px; }
+  .media.sales.empty { min-height: 0; aspect-ratio: 16 / 7; }
 
   /* 3 reels lado a lado */
   .reels {
@@ -315,7 +317,7 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
     max-width: 400px;
     margin: 0 auto;
     background: var(--white);
-    border: 2px solid var(--pink);
+    border: none;
     border-radius: 28px;
     padding: 40px 28px 30px;
     box-shadow: 0 30px 60px -28px rgba(233, 30, 99, .4);
@@ -423,6 +425,12 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
   <section class="block reveal">
     <div class="wrap">
       <h2>Eu não sou mais a única usando meu Modelo de Reels. <span class="pk">Outras 3.988 pessoas já usam ele também.</span></h2>
+
+      <!-- PRINT DA QUANTIDADE DE VENDAS (horizontal) -->
+      <div class="media sales">
+        <img src="print-vendas.webp" alt="Print da quantidade de vendas" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <div class="ph"><b>Print das vendas</b>Salve como <u>print-vendas.webp</u>.</div>
+      </div>
 
       <!-- PROVAS SOCIAIS: até 7 prints, mural bagunçado. Para adicionar, salve como prova-4.webp ... prova-7.webp -->
       <div class="wall">

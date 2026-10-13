@@ -88,7 +88,7 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
 
   body {
     font-family: 'Open Sans', system-ui, sans-serif;
@@ -312,6 +312,24 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
   .shot.empty.mid { min-height: 220px; }
   .shot.empty.short { min-height: 150px; }
 
+
+  /* ========== MOCKUPS ==========
+     Cada espaço já tem a proporção do mockup correspondente (aspect-ratio).
+     Sem a imagem, aparece o quadro branco pontilhado com o nome do arquivo. */
+  .mock { position: relative; margin: 36px auto 0; width: 100%; }
+  .mock img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .mock.wide { width: min(100vw - 24px, 960px); margin-left: 50%; transform: translateX(-50%); }
+  .mock.tall { max-width: 460px; }
+  .mock .ph { display: none; }
+  .mock.empty {
+    border: 2px dotted var(--text); border-radius: 22px; background: var(--white);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+  }
+  .mock.empty.wide { transform: none; margin-left: auto; width: 100%; }
+  .mock.empty .ph { display: block; font-size: 14px; font-weight: 600; line-height: 1.5; }
+  .mock.empty .ph b { display: block; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 4px; }
+  .offer-card .mock { margin: 24px auto; }
+
   /* ========== CARD DA OFERTA ========== */
   .offer-card {
     max-width: 400px;
@@ -383,12 +401,11 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
   <section class="hero">
     <div class="wrap">
       <h1>Nunca mais acordei <span class="pk">sem saber o que postar</span>. O meu Modelo de Reels tá aqui 👇</h1>
-
-      <!-- MOCKUP GRANDE DO MODELO DE REELS -->
-      <div class="media tall">
-        <img src="mockup-leislin-2.webp" alt="Mockup do Modelo de Reels" width="1800" height="1400" onerror="this.parentElement.classList.add('empty');this.remove()">
-        <div class="ph"><b>Mockup grande</b>Modelo de Reels. Arquivo atual: <u>mockup-leislin-2.webp</u>.</div>
-      </div>
+      <!-- MOCKUP1 (1800x1132) -->
+      <figure class="mock wide" style="aspect-ratio:1800/1132">
+        <img src="mockup1.webp" alt="O Modelo de Reels no celular, com páginas do material e Reels reais" width="1800" height="1132" loading="eager" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption class="ph"><b>Mockup 1</b>mockup1.webp · 1800×1132</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -398,12 +415,11 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
       <h2>Eu não tô te vendendo um Modelo que eu acho que funciona. <span class="pk">Eu tô te entregando o que eu uso.</span></h2>
       <p class="big-line">Eu sou a aluna número 1 do meu próprio Modelo de Reels.</p>
       <p class="sub" style="margin-top:22px"><strong>95 mil pessoas novas chegaram no meu perfil em 90 dias</strong> (talvez você seja uma delas) usando o meu Modelo de Reels.</p>
-
-      <!-- PRINT DAS MÉTRICAS + REELS REAIS -->
-      <div class="media" style="max-width:420px">
-        <img src="print-metrica.webp" alt="Print das métricas: 95 mil novos seguidores em 90 dias" onerror="this.parentElement.classList.add('empty');this.remove()">
-        <div class="ph"><b>Print das métricas</b>Salve como <u>print-metrica.webp</u>.</div>
-      </div>
+      <!-- MOCKUP2 (1800x1073) -->
+      <figure class="mock wide" style="aspect-ratio:1800/1073">
+        <img src="mockup2.webp" alt="Métricas do perfil: +95.764 seguidores em 90 dias" width="1800" height="1073" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption class="ph"><b>Mockup 2</b>mockup2.webp · 1800×1073</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -412,36 +428,28 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
     <div class="wrap">
       <h2>Eu peguei o jeito que eu crio meus Reels e transformei em um <span class="pk">Modelo pronto pra qualquer pessoa usar.</span></h2>
       <p class="sub">É só adaptar ao seu trabalho e criar os seus próprios Reels.</p>
-
-      <!-- MOCKUPS MOSTRANDO O MATERIAL POR DENTRO -->
-      <div class="media">
-        <img src="notion-telas.webp" alt="O Modelo de Reels por dentro" onerror="this.parentElement.classList.add('empty');this.remove()">
-        <div class="ph"><b>Material por dentro</b>Mockups mostrando o Modelo por dentro. Salve como <u>notion-telas.webp</u>.</div>
-      </div>
+      <!-- MOCKUP3 (1600x1248) -->
+      <figure class="mock wide" style="aspect-ratio:1600/1248">
+        <img src="mockup3.webp" alt="O Modelo de Reels por dentro, no celular e no tablet" width="1600" height="1248" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption class="ph"><b>Mockup 3</b>mockup3.webp · 1600×1248</figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- ============ PROVAS SOCIAIS ============ -->
   <section class="block reveal">
     <div class="wrap">
-      <h2>Eu não sou mais a única usando meu Modelo de Reels. <span class="pk">Outras 3.988 pessoas já usam ele também.</span></h2>
-
-      <!-- PRINT DA QUANTIDADE DE VENDAS (horizontal) -->
-      <div class="media sales">
-        <img src="print-vendas.webp" alt="Print da quantidade de vendas" onerror="this.parentElement.classList.add('empty');this.remove()">
-        <div class="ph"><b>Print das vendas</b>Salve como <u>print-vendas.webp</u>.</div>
-      </div>
-
-      <!-- PROVAS SOCIAIS: até 7 prints, mural bagunçado. Para adicionar, salve como prova-4.webp ... prova-7.webp -->
-      <div class="wall">
-        <figure class="shot"><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback1.webp" alt="Depoimento" loading="lazy"></figure>
-        <figure class="shot slot tall"><img src="prova-4.webp" alt="Depoimento" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
-        <figure class="shot"><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback2.webp" alt="Depoimento" loading="lazy"></figure>
-        <figure class="shot slot short"><img src="prova-5.webp" alt="Depoimento" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
-        <figure class="shot"><img src="https://raw.githubusercontent.com/LeislinEduarda/obrigado-black/main/feedback3.webp" alt="Depoimento" loading="lazy"></figure>
-        <figure class="shot slot mid"><img src="prova-6.webp" alt="Depoimento" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
-        <figure class="shot slot short"><img src="prova-7.webp" alt="Depoimento" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()"></figure>
-      </div>
+      <h2>Eu não sou mais a única usando meu Modelo de Reels. <span class="pk">Outras 4.015 pessoas já usam ele também.</span></h2>
+      <!-- MOCKUP4 (1600x804) -->
+      <figure class="mock " style="aspect-ratio:1600/804">
+        <img src="mockup4.webp" alt="4.015 membros já dentro do Modelo de Reels" width="1600" height="804" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption class="ph"><b>Mockup 4</b>mockup4.webp · 1600×804</figcaption>
+      </figure>
+      <!-- MOCKUP5 (1000x2221) -->
+      <figure class="mock tall" style="aspect-ratio:1000/2221">
+        <img src="mockup5.webp" alt="Mensagens de quem já usa o Modelo de Reels" width="1000" height="2221" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption class="ph"><b>Mockup 5</b>mockup5.webp · 1000×2221</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -451,11 +459,11 @@ src="https://www.facebook.com/tr?id=1292839838840770&ev=PageView&noscript=1"
       <div class="offer-card">
         <h2>Eu já sei o que vou postar. <span class="pk">Agora você também pode saber</span> com o meu Modelo de Reels.</h2>
 
-        <!-- MOCKUP FINAL DO MODELO DE REELS -->
-        <div class="media">
-          <img src="mockup-final.webp" alt="Mockup final do Modelo de Reels" onerror="this.parentElement.classList.add('empty');this.remove()">
-          <div class="ph"><b>Mockup final</b>Salve como <u>mockup-final.webp</u>.</div>
-        </div>
+        <!-- MOCKUP6 (1600x933) -->
+      <figure class="mock " style="aspect-ratio:1600/933">
+        <img src="mockup6.webp" alt="O Modelo de Reels no celular com as páginas do material" width="1600" height="933" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption class="ph"><b>Mockup 6</b>mockup6.webp · 1600×933</figcaption>
+      </figure>
 
         <div class="price" style="margin-bottom:22px"><small>R$</small>47</div>
 
